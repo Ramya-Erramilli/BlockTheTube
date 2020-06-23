@@ -66,12 +66,12 @@
 			children = (
 				2D1252F524A1C0D700781BD2 /* AppDelegate.swift */,
 				2D1252F724A1C0D700781BD2 /* SceneDelegate.swift */,
-				2D12530F24A1DC1600781BD2 /* Controller */,
+				2D12531224A1E87100781BD2 /* Model */,
 				2D12530E24A1DC0800781BD2 /* View */,
+				2D12530F24A1DC1600781BD2 /* Controller */,
 				2D1252FE24A1C0DC00781BD2 /* Assets.xcassets */,
 				2D12530024A1C0DC00781BD2 /* LaunchScreen.storyboard */,
 				2D12530324A1C0DC00781BD2 /* Info.plist */,
-				2D12531024A1E35500781BD2 /* Stopwatch.swift */,
 			);
 			path = BlockTheTube;
 			sourceTree = "<group>";
@@ -99,6 +99,14 @@
 				2D12530C24A1D56800781BD2 /* ErrorMessageViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D12531224A1E87100781BD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D12531024A1E35500781BD2 /* Stopwatch.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
