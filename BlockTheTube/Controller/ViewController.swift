@@ -26,6 +26,10 @@ class ViewController: UIViewController {
         searchBar.delegate = self
         searchBar.autocapitalizationType = .none
         webView.navigationDelegate = self
+        
+        
+        
+        
     }
     
     @IBAction func modeSelector(_ sender: UISwitch) {
