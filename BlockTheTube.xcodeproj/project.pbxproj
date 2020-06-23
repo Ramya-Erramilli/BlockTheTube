@@ -13,6 +13,8 @@
 		2D1252FD24A1C0D700781BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D1252FB24A1C0D700781BD2 /* Main.storyboard */; };
 		2D1252FF24A1C0DC00781BD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D1252FE24A1C0DC00781BD2 /* Assets.xcassets */; };
 		2D12530224A1C0DC00781BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D12530024A1C0DC00781BD2 /* LaunchScreen.storyboard */; };
+		2D12530B24A1D14500781BD2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D12530A24A1D14500781BD2 /* WebKit.framework */; };
+		2D12530D24A1D56800781BD2 /* ErrorMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12530C24A1D56800781BD2 /* ErrorMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2D1252FE24A1C0DC00781BD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D12530124A1C0DC00781BD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D12530324A1C0DC00781BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D12530A24A1D14500781BD2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		2D12530C24A1D56800781BD2 /* ErrorMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D12530B24A1D14500781BD2 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 			children = (
 				2D1252F424A1C0D700781BD2 /* BlockTheTube */,
 				2D1252F324A1C0D700781BD2 /* Products */,
+				2D12530924A1D14400781BD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +66,20 @@
 				2D1252F724A1C0D700781BD2 /* SceneDelegate.swift */,
 				2D1252F924A1C0D700781BD2 /* ViewController.swift */,
 				2D1252FB24A1C0D700781BD2 /* Main.storyboard */,
+				2D12530C24A1D56800781BD2 /* ErrorMessageViewController.swift */,
 				2D1252FE24A1C0DC00781BD2 /* Assets.xcassets */,
 				2D12530024A1C0DC00781BD2 /* LaunchScreen.storyboard */,
 				2D12530324A1C0DC00781BD2 /* Info.plist */,
 			);
 			path = BlockTheTube;
+			sourceTree = "<group>";
+		};
+		2D12530924A1D14400781BD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D12530A24A1D14500781BD2 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +155,7 @@
 			files = (
 				2D1252FA24A1C0D700781BD2 /* ViewController.swift in Sources */,
 				2D1252F624A1C0D700781BD2 /* AppDelegate.swift in Sources */,
+				2D12530D24A1D56800781BD2 /* ErrorMessageViewController.swift in Sources */,
 				2D1252F824A1C0D700781BD2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
