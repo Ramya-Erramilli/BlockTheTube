@@ -36,6 +36,13 @@
                                     <action selector="modeSelector:" destination="BYZ-38-t0r" eventType="valueChanged" id="U4D-er-QL8"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px5-pZ-rrg">
+                                <rect key="frame" x="20" y="59" width="157" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mode : Blocked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTb-Rk-4oz">
                                 <rect key="frame" x="192" y="64" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,6 +59,7 @@
                         <outlet property="mode" destination="DpL-cR-fFg" id="XWV-JG-1Hk"/>
                         <outlet property="modeLabel" destination="LTb-Rk-4oz" id="yuN-4k-eSI"/>
                         <outlet property="searchBar" destination="TA1-SC-iCg" id="9G1-eQ-HfU"/>
+                        <outlet property="timerLabel" destination="px5-pZ-rrg" id="ary-Tv-hjO"/>
                         <outlet property="webView" destination="lMl-mg-gpT" id="iY6-YX-gOf"/>
                         <segue destination="HiL-W8-Evt" kind="show" identifier="error" id="hxS-hr-qih"/>
                     </connections>

@@ -15,6 +15,7 @@
 		2D12530224A1C0DC00781BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D12530024A1C0DC00781BD2 /* LaunchScreen.storyboard */; };
 		2D12530B24A1D14500781BD2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D12530A24A1D14500781BD2 /* WebKit.framework */; };
 		2D12530D24A1D56800781BD2 /* ErrorMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12530C24A1D56800781BD2 /* ErrorMessageViewController.swift */; };
+		2D12531124A1E35500781BD2 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12531024A1E35500781BD2 /* Stopwatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2D12530324A1C0DC00781BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D12530A24A1D14500781BD2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2D12530C24A1D56800781BD2 /* ErrorMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageViewController.swift; sourceTree = "<group>"; };
+		2D12531024A1E35500781BD2 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +66,12 @@
 			children = (
 				2D1252F524A1C0D700781BD2 /* AppDelegate.swift */,
 				2D1252F724A1C0D700781BD2 /* SceneDelegate.swift */,
-				2D1252F924A1C0D700781BD2 /* ViewController.swift */,
-				2D1252FB24A1C0D700781BD2 /* Main.storyboard */,
-				2D12530C24A1D56800781BD2 /* ErrorMessageViewController.swift */,
+				2D12530F24A1DC1600781BD2 /* Controller */,
+				2D12530E24A1DC0800781BD2 /* View */,
 				2D1252FE24A1C0DC00781BD2 /* Assets.xcassets */,
 				2D12530024A1C0DC00781BD2 /* LaunchScreen.storyboard */,
 				2D12530324A1C0DC00781BD2 /* Info.plist */,
+				2D12531024A1E35500781BD2 /* Stopwatch.swift */,
 			);
 			path = BlockTheTube;
 			sourceTree = "<group>";
@@ -80,6 +82,23 @@
 				2D12530A24A1D14500781BD2 /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D12530E24A1DC0800781BD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D1252FB24A1C0D700781BD2 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D12530F24A1DC1600781BD2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D1252F924A1C0D700781BD2 /* ViewController.swift */,
+				2D12530C24A1D56800781BD2 /* ErrorMessageViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +174,7 @@
 			files = (
 				2D1252FA24A1C0D700781BD2 /* ViewController.swift in Sources */,
 				2D1252F624A1C0D700781BD2 /* AppDelegate.swift in Sources */,
+				2D12531124A1E35500781BD2 /* Stopwatch.swift in Sources */,
 				2D12530D24A1D56800781BD2 /* ErrorMessageViewController.swift in Sources */,
 				2D1252F824A1C0D700781BD2 /* SceneDelegate.swift in Sources */,
 			);
