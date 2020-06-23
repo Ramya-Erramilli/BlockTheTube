@@ -23,13 +23,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.becomeFirstResponder()
         searchBar.delegate = self
         searchBar.autocapitalizationType = .none
         webView.navigationDelegate = self
-        
-        
-        
-        
     }
     
     @IBAction func modeSelector(_ sender: UISwitch) {
@@ -83,6 +80,12 @@ extension ViewController:UISearchBarDelegate {
             if let url = URL(string: text){
                 let req = URLRequest(url: url)
                 self.webView.load(req)
+            }else{
+                var alert = UIAlertController(title: "Invalid", message: "The url you hvae provided is invalid.Please check", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (al) in
+                    searchBar.text = ""
+                }))
+                self.present(alert, animated: true)
             }
         }
     }

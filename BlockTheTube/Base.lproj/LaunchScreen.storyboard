@@ -15,12 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="m19-xJ-VT3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="m19-xJ-VT3">
                                 <rect key="frame" x="87" y="331" width="240" height="235"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99194842579999998" green="0.98835188149999997" blue="0.93439888950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="m19-xJ-VT3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="R6R-dV-kMJ"/>
+                            <constraint firstItem="m19-xJ-VT3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gHp-1h-pSH"/>
+                            <constraint firstItem="m19-xJ-VT3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="287" id="hFd-Tp-nZ7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
