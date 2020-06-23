@@ -61,6 +61,7 @@ extension ViewController : WKNavigationDelegate{
                     watch.stop()
                     return
                 }else{
+                    timerLabel.isHidden = false
                     fireTimer()
                 }
             }
@@ -91,8 +92,6 @@ extension ViewController:UISearchBarDelegate {
 // MARK:- Timer
 
 extension ViewController{
-    
-    
     func fireTimer(){
         watch.start()
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
