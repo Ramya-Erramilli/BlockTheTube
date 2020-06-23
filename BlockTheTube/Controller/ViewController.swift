@@ -9,8 +9,8 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController,WKNavigationDelegate, UISearchBarDelegate {
-
+class ViewController: UIViewController {
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var mode: UISwitch!
@@ -19,49 +19,13 @@ class ViewController: UIViewController,WKNavigationDelegate, UISearchBarDelegate
     
     var counter = 0.0
     var timer = Timer()
-    
     var watch = Stopwatch()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         searchBar.delegate = self
         searchBar.autocapitalizationType = .none
-        
         webView.navigationDelegate = self
-
-    }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        if var text =  searchBar.text{
-            if !text.contains("https://"){
-                text = "https://\(text)"
-            }
-            if let url = URL(string: text){
-                let req = URLRequest(url: url)
-                self.webView.load(req)
-            }
-        }
-    }
- 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if let host = navigationAction.request.url?.host {
-            if (host == "www.youtube.com" || host.contains("youtube")){
-                if mode.isOn{
-                    decisionHandler(.cancel)
-                    self.performSegue(withIdentifier: "error", sender: self)
-                    timer.invalidate()
-                    watch.stop()
-                    return
-                }else{
-                    fireTimer()
-                }
-            }
-        }
-       
-        decisionHandler(.allow)
     }
     
     @IBAction func modeSelector(_ sender: UISwitch) {
@@ -76,13 +40,59 @@ class ViewController: UIViewController,WKNavigationDelegate, UISearchBarDelegate
             watch.stop()
             timer.invalidate()
         }
-    
     }
+}
+
+//MARK:- WEBVIEW Blocking
+
+extension ViewController : WKNavigationDelegate{
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if let host = navigationAction.request.url?.host {
+            if (host == "www.youtube.com" || host.contains("youtube")){
+                if mode.isOn{
+                    searchBar.text = ""
+                    decisionHandler(.cancel)
+                    self.performSegue(withIdentifier: "error", sender: self)
+                    timer.invalidate()
+                    watch.stop()
+                    return
+                }else{
+                    fireTimer()
+                }
+            }
+        }
+        
+        decisionHandler(.allow)
+    }
+}
+
+//MARK:- SearchBar Delegate
+
+extension ViewController:UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if var text =  searchBar.text{
+            if !text.contains("https://"){
+                text = "https://\(text)"
+            }
+            if let url = URL(string: text){
+                let req = URLRequest(url: url)
+                self.webView.load(req)
+            }
+        }
+    }
+    
+}
+
+// MARK:- Timer
+
+extension ViewController{
+    
     
     func fireTimer(){
         watch.start()
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
-
+        
         timer.fire()
     }
     
@@ -92,7 +102,4 @@ class ViewController: UIViewController,WKNavigationDelegate, UISearchBarDelegate
         let tenOfSeconds = Int((watch.elapsedTime*10).truncatingRemainder(dividingBy: 10))
         timerLabel.text = String(format: "%02d:%02d:%02d", min,sec,tenOfSeconds)
     }
-    
 }
-
-
