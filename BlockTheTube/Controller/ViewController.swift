@@ -66,6 +66,17 @@ extension ViewController : WKNavigationDelegate{
         
         decisionHandler(.allow)
     }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        
+        var alert = UIAlertController(title: "Invalid", message: "The url you have provided is invalid.Please check", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (al) in
+            self.searchBar.text = ""
+        }))
+        self.present(alert, animated: true)
+        
+    }
+
 }
 
 //MARK:- SearchBar Delegate
@@ -80,13 +91,8 @@ extension ViewController:UISearchBarDelegate {
             if let url = URL(string: text){
                 let req = URLRequest(url: url)
                 self.webView.load(req)
-            }else{
-                var alert = UIAlertController(title: "Invalid", message: "The url you hvae provided is invalid.Please check", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (al) in
-                    searchBar.text = ""
-                }))
-                self.present(alert, animated: true)
             }
+            
         }
     }
     
