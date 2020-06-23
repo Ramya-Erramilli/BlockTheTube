@@ -69,7 +69,7 @@ extension ViewController : WKNavigationDelegate{
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         
-        var alert = UIAlertController(title: "Invalid", message: "The url you have provided is invalid.Please check", preferredStyle: .alert)
+        var alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (al) in
             self.searchBar.text = ""
         }))
